@@ -1,0 +1,29 @@
+{
+  "name": "novacart-platform",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot ./src/index.ts",
+    "create:migration": "bunx prisma migrate dev --name init",
+    "migrate": "bunx prisma migrate deploy",
+    "generate": "bunx prisma generate",
+    "connect:shadow:db": "docker exec -it shadow-mysql mysql -u root -p"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "@types/node": "^20.8.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@fastify/error": "^3.4.0",
+    "@fastify/type-provider-typebox": "^3.5.0",
+    "@prisma/client": "^5.5.2",
+    "@sinclair/typebox": "^0.31.18",
+    "fastify": "^4.25.1",
+    "fastify-plugin": "^4.5.1",
+    "slugify": "^1.6.6"
+  }
+}
